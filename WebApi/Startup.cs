@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using WebaApi.DBOperations;
 using Microsoft.EntityFrameworkCore;
-
+using System.Reflection;
 
 namespace WebaApi
 {
@@ -37,6 +37,7 @@ namespace WebaApi
             });
 
             services.AddDbContext<BookStoreDbContext>(options => options.UseInMemoryDatabase(databaseName: "BookStoreDB"));
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

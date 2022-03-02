@@ -32,3 +32,6 @@ C:\Users\ERAY\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\Microsoft.Enti
 C:\Users\ERAY\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\ERAY\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\ERAY\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\ERAY\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\ERAY\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\ERAY\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\FluentValidation.dll

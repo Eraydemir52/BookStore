@@ -3,17 +3,20 @@ using WebaApi.DBOperations;
 using System.Linq;
 using System;
 using WebaApi;
+using AutoMapper;
 using WebaApi.Common;
 
-namespace WebaApi.BookOperations.CreateBook
+namespace WebaApi.BookOperations.GetBooks.CreateBook
 {
     public class CreateBookCommand
     {
         public CreateBookModel Model { get; set; }
         private readonly BookStoreDbContext _dbContext;
-        public CreateBookCommand(BookStoreDbContext dbContext)
+        private readonly IMapper _mapper;
+        public CreateBookCommand(BookStoreDbContext dbContext, IMapper mapper)
         {
-           _dbContext=dbContext;
+            _dbContext = dbContext;
+            _mapper = mapper;
         }
 
         public void Handel()
@@ -22,14 +25,8 @@ namespace WebaApi.BookOperations.CreateBook
             if (book is not null)
                 throw new InvalidOperationException("Book is already available");
 
-            book = new Book()
-            {
-                Title = Model.Title,
-                GenreId= Model.GenreId,
-                PageCount = Model.PageCount,
-                PublishDate = Model.PublishDate
-
-            };
+            book = _mapper.Map<Book>(Model);//book mappledi createmodele 
+            
 
             _dbContext.Books.Add(book);
             _dbContext.SaveChanges();
@@ -43,7 +40,7 @@ namespace WebaApi.BookOperations.CreateBook
             public int GenreId { get; set; }
             public int PageCount { get; set; }
 
-            public DateTime PublishDate { get; set;}
+            public DateTime PublishDate { get; set; }
 
         }
     }
